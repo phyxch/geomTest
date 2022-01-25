@@ -10,5 +10,5 @@
 /vis/geometry/set/colour OuterHCalTile10_EJ200 1 1 1 0
 /vis/geometry/set/colour OuterHCalTile11_EJ200 1 0 1 1
 /vis/geometry/set/colour OuterHCalTile12_EJ200 1 1 0 1
-/vis/geometry/set/forceWireframe OuterHCalSector_Steel 1 1
-/vis/geometry/set/forceWireframe OuterHCalChimneySector_Steel 1 1
+#/vis/geometry/set/forceWireframe OuterHCalSector_Steel 1 1
+#/vis/geometry/set/forceWireframe OuterHCalChimneySector_Steel 1 1
