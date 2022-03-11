@@ -12,6 +12,9 @@
 //
 // Jan 11, 2022: hexc
 // Start testing inner hcal geometry
+// Feb, 2022: hexc
+// Got updated stl files from Rich for Inner HCal tiles.
+
 
 #include "GTDetectorConstruction.hh"
 
@@ -56,27 +59,32 @@ G4VPhysicalVolume* GTDetectorConstruction::Construct()
   // Option to switch on/off checking of volumes overlaps
   //
   G4bool checkOverlaps = true;
-
       
   // Read in gdml detector description
   G4GDMLParser parser;
 
-  parser.Read("OuterHCalFull.gdml");  // OK,
-  //parser.Read("InnerOuterHCalAbsorberSector.gdml");  // OK
-  //parser.Read("InnerHCalAbsorberSector.gdml");  // OK  
+
+  //  parser.Read("Inner12.gdml");  
+  //  parser.Read("InnerHCalFull.gdml");  // OK,
+  //  parser.Read("OuterHCalFull.gdml");  // OK,
+  //  parser.Read("InnerOuterHCalAbsorberSector.gdml");  // OK
+  //  parser.Read("InnerHCalAbsorberSector.gdml");  // OK  
   //  parser.Read("InnerHCalSectorNoEndPlate.gdml"); // OK
   //  parser.Read("InnerHCALNoEndplates.gdml"); // Not ok. the gdml file seems too large
-  //parser.Read("InnerTilesAssembly.gdml"); // OK
+  //  parser.Read("InnerTilesAssembly.gdml"); // OK
+  //  parser.Read("InnerHCalAbsorberTiles.gdml");  // OK completed on 3/3/22 
+  //  parser.Read("InnerTiles360Assembly.gdml");  // OK
+  //  parser.Read("InnerTiles360AssemblyTagging.gdml");  // OK  
   //  parser.Read("InnerTiles.gdml"); // OK
-  //parser.Read("InnerTile24Assembly.gdml"); // OK
+  //  parser.Read("InnerTile24Assembly.gdml"); // OK
   //  parser.Read("InnerHCalSector.gdml"); // OK
   
-  //parser.Read("OuterHCalFibers.gdml"); // OK
+  //  parser.Read("OuterHCalFibers.gdml"); // OK
   //  parser.Read("OuterHCalChimneyFibers.gdml"); // OK
   //  parser.Read("OuterHCalChimneyTiles.gdml"); // OK
   //  parser.Read("OuterHCalChimney.gdml"); // OK
   //  parser.Read("OuterHCalAbsorber.gdml");  // OK
-  //  parser.Read("OuterHCalAbsorberTiles.gdml");  // OK, only half sector tiles are included.
+  parser.Read("OuterHCalAbsorberTiles.gdml");  // OK, only half sector tiles are included.
   //G4cout << "Geometry loaded from  file ...... OuterHCalAbsorberTiles.gdml" << G4endl;  
   //  parser.Read("OuterHCalAbsorber360.gdml");  // runs but placement is wrong
   //  parser.Read("OuterHCalAbsorber360Rotate.gdml");  // OK
@@ -84,13 +92,12 @@ G4VPhysicalVolume* GTDetectorConstruction::Construct()
   //  parser.Read("OuterHCalAbsorberSector.gdml");  // OK all absorber sectors with chimney sectors as well
   //  parser.Read("OuterHCalAbsorber360_new.gdml");  // OK
   //  parser.Read("OuterHCalAbsorberArray.gdml");  // OK
-  //parser.Read("OuterHCal360.gdml");  // Not OK
+  //  parser.Read("OuterHCal360.gdml");  // Not OK
   //  parser.Read("outerTiles.gdml");  // OK
   //  parser.Read("outerTilesAssembly.gdml");  // OK
-  //  parser.Read("outerTiles360Assembly.gdml");  // OK
+  //  parser.Read("OuterTiles360Assembly.gdml");  // OK
   //  parser.Read("outerTilesChimneyAssembly.gdml");  // OK
-  //parser.Read("outerTilesAssembly360.gdml");  // OK
-  //parser.Read("OuterHCalTilesNoGroove.gdml");  // OK
+  //  parser.Read("OuterHCalTilesNoGroove.gdml");  // OK
   //  parser.Read("OuterHCalTilesGroove.gdml");   // OK
   //  parser.Read("OuterHCalSectorWithTilesAndInnerSkins.gdml");  // OK
   //  parser.Read("innerOneSector.gdml"); // no OK
@@ -99,9 +106,9 @@ G4VPhysicalVolume* GTDetectorConstruction::Construct()
   
   //  parser.Read("mRICH_support.gdml");
   //  parser.Read("FrontFoamWall.gdml");
-  //parser.Read("BackFoamWall.gdml");
-  //parser.Read("loopPanel_only.gdml");
-  //parser.Read("fiberLoop_only.gdml");
+  //  parser.Read("BackFoamWall.gdml");
+  //  parser.Read("loopPanel_only.gdml");
+  //  parser.Read("fiberLoop_only.gdml");
   //  parser.Read("triangle.gdml");
   
   G4VPhysicalVolume* physWorld = parser.GetWorldVolume();
