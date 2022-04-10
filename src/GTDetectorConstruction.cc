@@ -64,7 +64,8 @@ G4VPhysicalVolume* GTDetectorConstruction::Construct()
   G4GDMLParser parser;
 
 
-  parser.Read("sPHENIX_HCal.gdml");
+  parser.Read("oneSectorOuterHCal.gdml");
+  //  parser.Read("sPHENIX_HCal.gdml");
   //  parser.Read("Inner12.gdml");  
   //  parser.Read("InnerHCalFull.gdml");  // OK,
   //  parser.Read("OuterHCalFull.gdml");  // OK,
