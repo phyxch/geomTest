@@ -62,10 +62,15 @@ G4VPhysicalVolume* GTDetectorConstruction::Construct()
       
   // Read in gdml detector description
   G4GDMLParser parser;
-
-
-  parser.Read("oneSectorOuterHCal.gdml");
-  //  parser.Read("sPHENIX_HCal.gdml");
+  
+  
+  parser.Read("sPHENIX_HCal.gdml");
+  //  parser.Read("OuterHCalAbsorberTiles.gdml");  // OK 8/23/2022 X. He
+  
+  // Following gdml files were created during the code development stage. Some of
+  // them are outdated.  9/1/2022
+  //
+  //  parser.Read("oneSectorOuterHCal.gdml");
   //  parser.Read("Inner12.gdml");  
   //  parser.Read("InnerHCalFull.gdml");  // OK,
   //  parser.Read("OuterHCalFull.gdml");  // OK,
@@ -86,7 +91,6 @@ G4VPhysicalVolume* GTDetectorConstruction::Construct()
   //  parser.Read("OuterHCalChimneyTiles.gdml"); // OK
   //  parser.Read("OuterHCalChimney.gdml"); // OK
   //  parser.Read("OuterHCalAbsorber.gdml");  // OK
-  //  parser.Read("OuterHCalAbsorberTiles.gdml");  // OK, only half sector tiles are included.
   //G4cout << "Geometry loaded from  file ...... OuterHCalAbsorberTiles.gdml" << G4endl;  
   //  parser.Read("OuterHCalAbsorber360.gdml");  // runs but placement is wrong
   //  parser.Read("OuterHCalAbsorber360Rotate.gdml");  // OK
